@@ -8,7 +8,77 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel>
 
-    </Grid>
+        <!--Header text-->
+        <TextBlock
+                Margin="50, 70, 40, 30"
+                FontSize="60" FontWeight="Bold"
+                Width="601"
+                HorizontalAlignment="Left">
+                Yksinkertainen laskin
+        </TextBlock>
+
+        <ComboBox
+                Name="selectionBox"
+                Margin="50, 0, 0, 40"
+                BorderThickness="2"
+                Width="145"
+                Height="40"
+                HorizontalAlignment="Left"
+                SelectionChanged="selectionBox_SelectionChanged">
+            <ComboBoxItem>
+                Addition
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Subtraction
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Multiplication
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Division
+            </ComboBoxItem>
+        </ComboBox>
+
+        <!--First user input-->
+        <TextBox 
+                Name="num1"
+                Margin="50, 0, 0, 10"
+                BorderThickness="2"
+                Width="145"
+                Height="40"
+                HorizontalAlignment="Left">
+        </TextBox>
+ 
+        <!--Second user input-->
+        <TextBox
+                Name="num2"
+                Margin="50, 10, 0, 0"
+                BorderThickness="2"
+                Width="145"
+                Height="40"
+                HorizontalAlignment="Left">
+        </TextBox>
+
+        <!--Button to calculate-->
+        <Button
+                Margin="50, 40, 0, 0"
+                Click="Button_Click">
+                Laske!
+        </Button>
+
+        <!--Textbox to print the result-->
+        <TextBox Name="result"
+                 Margin="50, 40, 0, 0"
+                 BorderBrush="#008b8b"
+                 Foreground="White"
+                 Background="#008b8b"
+                 BorderThickness="2"
+                 Width="145"
+                 Height="40"
+                 HorizontalAlignment="Left">
+        </TextBox>
+
+    </StackPanel>
 </Page>

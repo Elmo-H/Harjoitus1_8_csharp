@@ -22,9 +22,52 @@ namespace Harjoitus1_8_csharp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        int num1;
+        int num2;
+        string operation;
+        int answer;
+
         public MainPage()
         {
             this.InitializeComponent();
         }
+
+        private void selectionBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string comboText = ((ComboBoxItem)selectionBox.SelectedItem).Content.ToString();
+
+            switch (comboText)
+            {
+                case "Addition":
+                    answer = num1 + num2;
+                    break;
+                case "Subtraction":
+                    answer = num1 - num2;
+                case "Multiplication":
+                    answer = num1 * num2;
+                case "Division":
+                    answer = num1 / num2;
+            }
+
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
+
+    private void Sum_Numbers(object sender, RoutedEventArgs e)
+    {
+        int input1 = Convert.ToInt16(num1.Text);
+        int input2 = Convert.ToInt16(num2.Text);
+
+        result.Text = Convert.ToString(input1 + input2);
+
+    }
+
+
 }
+
